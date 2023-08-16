@@ -44,7 +44,7 @@ bool SoyosourceModbus::parse_soyosource_modbus_byte_(uint8_t byte) {
   uint8_t address = raw[0];
 
   if (at == 3) {
-    if (raw[0] != 0x23 || raw[1] != 0x01 || raw[2] != 0x01 || raw[3] != 0x00) {
+    if (raw[0] != 0x23 || raw[1] != 0x00 || raw[2] != 0x01 || raw[3] != 0x00) {
       ESP_LOGW(TAG, "Invalid header: 0x%02X 0x%02X 0x%02X 0x%02X", raw[0], raw[1], raw[2], raw[3]);
 
       // return false to reset buffer
